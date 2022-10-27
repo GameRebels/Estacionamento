@@ -7,7 +7,7 @@ package model.bean;
 
 /**
  *
- * @author José Henrique
+ * @author José Henrique 
  */
 public class Motorista { 
     private int idMotorista;

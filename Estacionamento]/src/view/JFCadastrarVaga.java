@@ -8,7 +8,7 @@ package view;
 import model.bean.Vaga;
 import model.dao.VagaDAO;
 
-/**
+/** 
  *
  * @author 04031966040
  */

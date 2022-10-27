@@ -13,7 +13,7 @@ public class Vaga {
     private int idVaga;
     private int numero;
     private String rua;
-    private boolean obliqua;
+    private boolean obliqua; 
 
     public int getIdVaga() {
         return idVaga;
