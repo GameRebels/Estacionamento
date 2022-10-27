@@ -7,13 +7,13 @@ package model.bean;
 
 /**
  *
- * @author 04031966040
+ * @author 03017719014
  */
-public class Vaga { 
+public class Vaga {
     private int idVaga;
     private int numero;
     private String rua;
-    private boolean obliqua; 
+    private boolean obliqua;
 
     public int getIdVaga() {
         return idVaga;
@@ -39,13 +39,14 @@ public class Vaga {
         this.rua = rua;
     }
 
-    public boolean isObliqua() {
+    public boolean getObliqua() {
         return obliqua;
     }
 
-    public void setObliqua(boolean obliquo) {
-        this.obliqua = obliquo;
+    public void setObliqua(boolean obliqua) {
+        this.obliqua = obliqua;
     }
+    
     
     
 }
