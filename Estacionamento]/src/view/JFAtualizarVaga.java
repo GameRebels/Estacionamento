@@ -22,7 +22,7 @@ public class JFAtualizarVaga extends javax.swing.JPanel {
         jTFRua.setText(v.getRua());
         if(v.isObliqua() == true){
             jRBObliqua.setSelected(true);
-        }else if (v.isObliqua() == false){
+        }else if (v.isObliqua() == false){ 
             jRBParalela.setSelected(true);
         }
     }
