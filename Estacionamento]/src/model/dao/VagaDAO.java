@@ -78,7 +78,7 @@ public class VagaDAO {
             stmt = con.prepareStatement("SELECT * FROM vaga WHERE idVaga =? LIMIT 1;");
             stmt.setInt(1, idVaga);
             rs = stmt.executeQuery();
-            if(rs != null&& rs.next()){
+            if(rs != null && rs.next()){
                 v.setIdVaga (rs.getInt("idVaga"));
                 v.setNumero (rs.getInt("numero"));
                 v.setRua (rs.getString("rua"));
@@ -86,8 +86,7 @@ public class VagaDAO {
             }
         }catch (SQLException e){
                     throw new RuntimeException("Erro ao buscar os dados: ", e);
-                    }
-            finally{
+        }finally{
                 ConnectionFactory.closeConnection(con, stmt, rs);
             }
             return v;
