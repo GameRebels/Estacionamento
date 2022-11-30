@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 04031966040
+ * @author Árthur Luiz
  */
 public class JFListarVaga extends javax.swing.JFrame {
 
@@ -116,7 +116,7 @@ public class JFListarVaga extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnSalvar)
@@ -133,7 +133,14 @@ public class JFListarVaga extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     private void jBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditarActionPerformed
-        // TODO add your handling code here:
+        if(jTVaga.getSelectedRow() != -1) {
+            int vagaSelecionada = (int)jTVaga.getValueAt(jTVaga.getSelectedRow(), 0);
+            JFAtualizarVaga av = new JFAtualizarVaga(vagaSelecionada);
+            av.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione uma vaga", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        readJTable();
     }//GEN-LAST:event_jBtnEditarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

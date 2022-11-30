@@ -7,7 +7,7 @@ package view;
  
 /**
  *
- * @author 04031966040
+ * @author Árthur Luiz
  */
 public class JfLogin extends javax.swing.JFrame {
 

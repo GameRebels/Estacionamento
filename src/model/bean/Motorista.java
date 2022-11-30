@@ -3,7 +3,7 @@ package model.bean;
 public class Motorista {
     private int idMotorista;
     private String nome;
-    private String genero;
+    private String genero; 
     private String rg;
     private String cpf;
     private String celular;
