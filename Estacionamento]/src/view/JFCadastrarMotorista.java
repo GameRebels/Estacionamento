@@ -10,7 +10,7 @@ import model.dao.MotoristaDAO;
 
 /**
  *
- * @author José Henrique
+ * @author Árthur Luiz
  */
 public class JFCadastrarMotorista extends javax.swing.JFrame {
 

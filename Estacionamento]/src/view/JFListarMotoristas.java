@@ -12,10 +12,9 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author José Henrique
+ * @author Árthur Luiz
  */
 public class JFListarMotoristas extends javax.swing.JFrame {
-
     /**
      * Creates new form JFListarMotoristas
      */
@@ -35,8 +34,8 @@ public class JFListarMotoristas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTMotorista = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jBtnCadastrar = new javax.swing.JButton();
+        jBtnEditar = new javax.swing.JButton();
         jBtnExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,9 +66,19 @@ public class JFListarMotoristas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTMotorista);
 
-        jButton1.setText("jButton1");
+        jBtnCadastrar.setText("Cadastrar");
+        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCadastrarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jBtnEditar.setText("Editar");
+        jBtnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnEditarActionPerformed(evt);
+            }
+        });
 
         jBtnExcluir.setText("Excluir");
         jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -83,19 +92,16 @@ public class JFListarMotoristas extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jBtnCadastrar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(jBtnEditar)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnExcluir)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                        .addComponent(jBtnExcluir))
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,9 +113,9 @@ public class JFListarMotoristas extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(jBtnEditar)
                     .addComponent(jBtnExcluir)
-                    .addComponent(jButton1))
+                    .addComponent(jBtnCadastrar))
                 .addContainerGap())
         );
 
@@ -141,6 +147,25 @@ public class JFListarMotoristas extends javax.swing.JFrame {
         readJTable();
 // TODO add your handling code here:
     }//GEN-LAST:event_jBtnExcluirActionPerformed
+
+    private void jBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditarActionPerformed
+        if (jTMotorista.getSelectedRow() != -1) {
+            int motoristaSelecionado = (int)jTMotorista.getValueAt(jTMotorista.getSelectedRow(), 0);
+            JFAtualizarMotorista am = new JFAtualizarMotorista(motoristaSelecionado);
+            am.setVisible(true);
+            System.out.println(motoristaSelecionado);
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um motorista!", "ERRO", JOptionPane.ERROR_MESSAGE);
+            
+        }
+        readJTable();
+    }//GEN-LAST:event_jBtnEditarActionPerformed
+
+    private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
+        JFCadastrarMotorista cm = new JFCadastrarMotorista();
+        cm.setVisible(true);
+    }//GEN-LAST:event_jBtnCadastrarActionPerformed
     public void readJTable() {
         DefaultTableModel modelo = (DefaultTableModel) jTMotorista.getModel();
         modelo.setNumRows(0);
@@ -194,9 +219,9 @@ public class JFListarMotoristas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnCadastrar;
+    private javax.swing.JButton jBtnEditar;
     private javax.swing.JButton jBtnExcluir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTMotorista;
